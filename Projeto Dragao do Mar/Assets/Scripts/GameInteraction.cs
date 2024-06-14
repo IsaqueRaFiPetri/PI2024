@@ -6,12 +6,10 @@ public class GameInteraction : MonoBehaviour
 {
     public GameObject painelInteração;
 
-    void Update()
-    {
-
-    }
     private void OnTriggerEnter(Collider other)
-    {painelInteração.SetActive(true);
+    {
+        painelInteração.SetActive(true); 
+        //PlayerStats.instance.playerPos(transform.Rotate())
         
     }
     private void OnTriggerExit(Collider other)
