@@ -4,12 +4,18 @@ using UnityEngine;
 
 public class DialogueInteraction : GameInteraction
 {
-    public Canvas dialogueCanvas;
+    public GameObject dialogueCanvas;
     
     public void Update()
     {
-        
+        if(Input.GetKeyDown(KeyCode.E)) 
+        {
+            dialogueCanvas.SetActive(true);
+        }
     }
 
-    
+    public void LastSpeak()
+    {
+        dialogueCanvas.SetActive(false);
+    }
 }

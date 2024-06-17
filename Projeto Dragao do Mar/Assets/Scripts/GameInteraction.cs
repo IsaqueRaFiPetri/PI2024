@@ -11,27 +11,30 @@ public abstract class GameInteraction : MonoBehaviour
     private void Awake()
     {
         isColliding = false;
+
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collision)
     {
-        isColliding = true;
-        if(isColliding)
+        if (collision.CompareTag("Player"))
         {
-            painelInteração.SetActive(true);
-        }        
+            isColliding = true;
+
+            if (isColliding)
+            {
+                painelInteração.SetActive(true);
+            }
+        } 
     }
-    private void OnTriggerExit(Collider other)
+
+    private void OnTriggerExit(Collider collision)
     {
         isColliding = false;
         painelInteração.SetActive(false);
     }
     public void Interact()
     {
-        if (isColliding)
-        {
-            //Input.GetButtonDown(KeyCode.E);
-        }
+        Input.GetKeyDown(interactionKey);
     }
 
 }
