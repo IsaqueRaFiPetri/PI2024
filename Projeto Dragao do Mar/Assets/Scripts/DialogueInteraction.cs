@@ -11,6 +11,7 @@ public class DialogueInteraction : GameInteraction
         if(Input.GetKeyDown(KeyCode.E)) 
         {
             dialogueCanvas.SetActive(true);
+            //PlayerStats.instance. = PlayerModes.UIing;
         }
     }
 

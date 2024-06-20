@@ -11,7 +11,6 @@ public abstract class GameInteraction : MonoBehaviour
     private void Awake()
     {
         isColliding = false;
-
     }
 
     private void OnTriggerEnter(Collider collision)

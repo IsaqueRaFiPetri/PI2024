@@ -30,8 +30,8 @@ Transform:
   m_GameObject: {fileID: 4459864850019384750}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -84.919, y: -45.11, z: -0.46599}
-  m_LocalScale: {x: 1.2528311, y: 1.2528311, z: 1.2528311}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4459864851508666808}
   m_Father: {fileID: 0}
@@ -145,12 +145,12 @@ MonoBehaviour:
   zoomFOV: 30
   zoomStepTime: 5
   playerCanMove: 1
-  walkSpeed: 5
+  walkSpeed: 7
   maxVelocityChange: 10
   enableSprint: 1
   unlimitedSprint: 1
   sprintKey: 304
-  sprintSpeed: 7
+  sprintSpeed: 10
   sprintDuration: 5
   sprintCooldown: 0.5
   sprintFOV: 80
@@ -163,13 +163,13 @@ MonoBehaviour:
   sprintBarHeightPercent: 0.02
   enableJump: 1
   jumpKey: 32
-  jumpPower: 5
+  jumpPower: 11
   enableCrouch: 1
   holdToCrouch: 1
   crouchKey: 306
   crouchHeight: 0.75
   speedReduction: 0.5
-  enableHeadBob: 1
+  enableHeadBob: 0
   joint: {fileID: 4459864851508666808}
   bobSpeed: 10
   bobAmount: {x: 0, y: 0.1, z: 0}
@@ -401,8 +401,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4459864851310106424}
-  m_LocalRotation: {x: 0.20326868, y: -0.15226482, z: 0.032017455, w: 0.966681}
-  m_LocalPosition: {x: 0.36065271, y: 0.34488428, z: -1.9978693}
+  m_LocalRotation: {x: -0.017683674, y: -0.025515819, z: -0.00046421765, w: 0.9995179}
+  m_LocalPosition: {x: -0.03686731, y: 0.29136634, z: 0.060559157}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -433,11 +433,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -618,7 +618,7 @@ Canvas:
   m_GameObject: {fileID: 4459864851551516604}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 4459864851310106426}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
