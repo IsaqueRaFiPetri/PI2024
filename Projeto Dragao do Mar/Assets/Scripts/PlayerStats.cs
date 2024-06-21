@@ -27,9 +27,9 @@ public class PlayerStats : MonoBehaviour
         switch (modes)
         {
             case PlayerModes.Walking:
+                controller.enabled = true;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
-                controller.enabled = true;
                 break;
             case PlayerModes.UIing:
                 controller.enabled = false;
@@ -73,6 +73,6 @@ public class PlayerStats : MonoBehaviour
     }
     public void SetWalkingMode()
     {
-        modes |= PlayerModes.Walking;
+        modes = PlayerModes.Walking;
     }
 }
