@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MenuPrincipalManag : MonoBehaviour
+public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject painelMenuInicial;
     [SerializeField] private GameObject painelCred;
 
-    public void Jogar()
+    public void Teleport(string tp)
     {
-        SceneManager.LoadScene("GameScene");
+        SceneManager.LoadScene(tp);
     }
 
     public void Creditos()

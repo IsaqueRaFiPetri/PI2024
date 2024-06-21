@@ -8,15 +8,19 @@ public class DialogueInteraction : GameInteraction
     
     public void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E)) 
+        if (isColliding)
         {
-            dialogueCanvas.SetActive(true);
-            //PlayerStats.instance. = PlayerModes.UIing;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                dialogueCanvas.SetActive(true);
+                PlayerStats.instance.SetUIingMode();
+            }
         }
     }
 
     public void LastSpeak()
     {
         dialogueCanvas.SetActive(false);
+        PlayerStats.instance.SetWalkingMode();
     }
 }

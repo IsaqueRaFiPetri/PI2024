@@ -66,4 +66,13 @@ public class PlayerStats : MonoBehaviour
             Time.timeScale = 0;
         }
     }
+
+    public void SetUIingMode()
+    {
+        modes = PlayerModes.UIing;
+    }
+    public void SetWalkingMode()
+    {
+        modes |= PlayerModes.Walking;
+    }
 }
