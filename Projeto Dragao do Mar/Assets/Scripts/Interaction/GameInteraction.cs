@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class GameInteraction : MonoBehaviour
 {
-    public GameObject painelInteração;
+    public GameObject painelInteration;
     public bool isColliding;
     public KeyCode interactionKey;
 
@@ -21,7 +21,7 @@ public abstract class GameInteraction : MonoBehaviour
 
             if (isColliding)
             {
-                painelInteração.SetActive(true);
+                painelInteration.SetActive(true);
             }
         } 
     }
@@ -29,7 +29,7 @@ public abstract class GameInteraction : MonoBehaviour
     private void OnTriggerExit(Collider collision)
     {
         isColliding = false;
-        painelInteração.SetActive(false);
+        painelInteration.SetActive(false);
     }
     public void Interact()
     {

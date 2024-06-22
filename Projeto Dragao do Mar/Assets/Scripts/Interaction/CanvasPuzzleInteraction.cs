@@ -13,6 +13,7 @@ public class CanvasPuzzleInteraction : GameInteraction
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
+                painelInteration.SetActive(false);
                 puzzlePainel.SetActive(true);
                 PlayerStats.instance.SetUIingMode();
             }

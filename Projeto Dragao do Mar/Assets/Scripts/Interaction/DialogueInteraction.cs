@@ -12,7 +12,7 @@ public class DialogueInteraction : GameInteraction
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                painelInteração.SetActive(false);
+                painelInteration.SetActive(false);
                 dialogueCanvas.SetActive(true);
                 PlayerStats.instance.SetUIingMode();
             }
