@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats instance;
     PlayerModes modes;
     FirstPersonController controller;
-    public static int politicalPoints, politicsPointsToConclude;
+    public static int politicalPoints, politicsPointsToConclude = 4;
 
     public UnityEvent OnPause, OnUnpause;
 
@@ -60,7 +60,7 @@ public class PlayerStats : MonoBehaviour
 
     public static void GainPoints(int politcPoints)
     {
-        politicalPoints += politcPoints;
+        politicalPoints = politcPoints;
         HUD.instance.SetPoints();
         if(politicalPoints >= politicsPointsToConclude)
         {
@@ -89,5 +89,11 @@ public class PlayerStats : MonoBehaviour
     public void SetWalkingMode()
     {
         modes = PlayerModes.Walking;
+    }
+
+    public void AddPoints(int points)
+    {
+        points += 1;
+        points = politicalPoints;
     }
 }
