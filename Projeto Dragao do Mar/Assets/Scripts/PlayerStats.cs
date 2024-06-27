@@ -13,7 +13,7 @@ public class PlayerStats : MonoBehaviour
     public static PlayerStats instance;
     PlayerModes modes;
     FirstPersonController controller;
-    public static int politicalPoints, politicsPointsToConclude = 4;
+    public static int politicalPoints, politicsPointsToConclude;
 
     public UnityEvent OnPause, OnUnpause;
 
