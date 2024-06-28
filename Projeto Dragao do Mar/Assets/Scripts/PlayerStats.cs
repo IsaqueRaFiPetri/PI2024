@@ -20,7 +20,6 @@ public class PlayerStats : MonoBehaviour
     {
         instance = this;
         controller = GetComponent<FirstPersonController>();
-
     }
 
     void Update()

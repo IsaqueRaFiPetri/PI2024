@@ -17,17 +17,17 @@ public class PoliticsPoints : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (ppAmount >= ppMax)
+        {
+            conclusionPainel.SetActive(true);
+            PlayerStats.instance.SetUIingMode();
+        }
     }
 
     public void GainPoints(int politcPoints)
     {
         ppAmount = politcPoints;
         SetPP();
-        if (ppAmount >= ppMax)
-        {
-            conclusionPainel.SetActive(true);
-        }
     }
     public void SetPP()
     {
