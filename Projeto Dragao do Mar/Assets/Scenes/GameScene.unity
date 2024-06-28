@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -19883,17 +19883,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1135614083}
   m_CullTransparentMesh: 1
---- !u!114 &1141673843 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1569227082, guid: 6bacecc4f3df9584198879c73a6b6c36, type: 3}
-  m_PrefabInstance: {fileID: 446186264}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 450302ac806fee1459f75e476809596c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1145506083
 GameObject:
   m_ObjectHideFlags: 0
@@ -31980,7 +31969,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.4585206, g: 0.8867924, b: 0.43921322, a: 0.78431374}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -32400,10 +32389,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1707632616}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378dda565cbdfd541ac3d22818082986, type: 3}
+  m_Script: {fileID: 11500000, guid: 14a6286fa962c9e4f8387730647fd0ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  politicsPointsBar: {fileID: 609365824}
+  ppBar: {fileID: 609365824}
   conclusionPainel: {fileID: 1679492783}
 --- !u!1 &1710069425
 GameObject:
@@ -36436,9 +36425,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1141673843}
-        m_TargetAssemblyTypeName: PlayerStats, Assembly-CSharp
-        m_MethodName: AddPoints
+      - m_Target: {fileID: 1707632621}
+        m_TargetAssemblyTypeName: PoliticsPoints, Assembly-CSharp
+        m_MethodName: AddPP
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
