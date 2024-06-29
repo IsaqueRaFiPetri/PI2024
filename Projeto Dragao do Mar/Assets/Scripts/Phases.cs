@@ -1,19 +1,17 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Phases : MonoBehaviour
 {
-    public Button[] botões;
+    public Button[] buttons;
 
     private void Update()
     {
-        for (int i = 0; i < botões.Length; i++)
+        for (int i = 0; i < buttons.Length; i++)
         {
             if (i + 1 > PlayerPrefs.GetInt("faseCompleta"))
             {
-                botões[i].interactable = false;
+                buttons[i].interactable = false;
             }
         }
     }
