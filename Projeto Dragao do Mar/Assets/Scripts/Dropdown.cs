@@ -20,7 +20,7 @@ public class Dropdown : MonoBehaviour
     {
         if (correct)
         {
-            Verifier.Instance.correctDropdowns++;
+            Verifier.Instance.currentDropdowns++;
         }
     }
 }
