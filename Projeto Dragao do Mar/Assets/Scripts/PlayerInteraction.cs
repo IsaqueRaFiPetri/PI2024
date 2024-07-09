@@ -5,19 +5,18 @@ using UnityEngine.Events;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public static PlayerInteraction Instance;
     public UnityEvent OnInteractionEffected;
-    public static PlayerInteraction instance;
     Transform cam;
     public float handDistance = 3;
-    // Start is called before the first frame update
+    
     void Start()
     {
-        instance = this;
+        Instance = this;
         cam = Camera.main.transform;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RayCast()
     {
         RaycastHit hit;
         Debug.DrawRay(cam.position, cam.forward * handDistance, Color.blue);

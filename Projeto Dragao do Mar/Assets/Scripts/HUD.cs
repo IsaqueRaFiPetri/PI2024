@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HUD : MonoBehaviour
 {
     public static HUD instance;
-    public Image politicsPointsBar;
+    public Image ppBar;
     public GameObject conclusionPainel;
 
     // Start is called before the first frame update
@@ -24,6 +24,6 @@ public class HUD : MonoBehaviour
 
     public void SetPoints()
     {
-        politicsPointsBar.fillAmount = (float)PlayerStats.politicalPoints / (float)PlayerStats.politicsPointsToConclude;
+        ppBar.fillAmount = (float)PlayerStats.politicalPoints / (float)PlayerStats.politicsPointsToConclude;
     }
 }

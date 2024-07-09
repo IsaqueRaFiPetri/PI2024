@@ -32,11 +32,14 @@ public class PlayerStats : MonoBehaviour
                 controller.enabled = true;
                 Cursor.visible = false;
                 Cursor.lockState = CursorLockMode.Locked;
+                PlayerInteraction.Instance.enabled = true;
+                PlayerInteraction.Instance.RayCast();
                 break;
             case PlayerModes.UIing:
                 controller.enabled = false;
                 Cursor.visible = true;
                 Cursor.lockState = CursorLockMode.None;
+                PlayerInteraction.Instance.enabled = false;
                 break;
         }
 
@@ -66,7 +69,6 @@ public class PlayerStats : MonoBehaviour
         {
             HUD.instance.SetPoints();
             HUD.instance.conclusionPainel.SetActive(true);
-
         }
     }
 

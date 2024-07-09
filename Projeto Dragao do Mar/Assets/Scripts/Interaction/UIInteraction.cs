@@ -8,7 +8,7 @@ public class UIInteraction : InteractableObject
 
     protected override void Interact()
     {
-        PlayerInteraction.instance.OnInteractionEffected.Invoke();
+        PlayerInteraction.Instance.OnInteractionEffected.Invoke();
         painel.SetActive(true);
         PlayerStats.instance.SetUIingMode();
     }
