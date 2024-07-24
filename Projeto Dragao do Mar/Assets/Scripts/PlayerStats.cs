@@ -17,6 +17,9 @@ public class PlayerStats : MonoBehaviour
 
     public UnityEvent OnPause, OnUnpause;
 
+    internal Vector3 velocity;
+    Vector2 look;
+
     void Awake()
     {
         instance = this;
@@ -97,5 +100,14 @@ public class PlayerStats : MonoBehaviour
     {
         points += 1;
         points = politicalPoints;
+    }
+
+    public void Teleport(Vector3 position, Quaternion rotation)
+    {
+        transform.position = position;
+        Physics.SyncTransforms();
+        look.x = rotation.eulerAngles.x;
+        look.y = rotation.eulerAngles.z;
+        velocity = Vector3.zero;
     }
 }
