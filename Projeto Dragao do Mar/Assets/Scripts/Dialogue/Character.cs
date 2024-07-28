@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Novo Persoangem", menuName = "Dialogo/Personagem")]
-public class Character : ScriptableObject
+[System.Serializable]
+public class Character
 {
-    public string Nome;
-    public Sprite[] Expressoes;
+    public string nome;
+    public Sprite charcterImage;
+
+    [TextArea(3, 10)]
+    public string[] sentences;
+
 }

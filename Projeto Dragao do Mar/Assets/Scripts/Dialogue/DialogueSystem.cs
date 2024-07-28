@@ -2,64 +2,67 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections.Generic;
-
+using System.Collections;
 
 public class DialogueSystem : MonoBehaviour
 {
-    [SerializeField] private GameObject _caixaDeDialogo;
+    private Queue<string> sentences;
 
-    [SerializeField] private Image _avatarPersonagem;
-    [SerializeField] private TextMeshProUGUI _nomePersonagem;
-    [SerializeField] private TextMeshProUGUI _textoFala;
+    public TMP_Text nameText;
+    public TMP_Text dialogueText;
+    public Image characterImage;
+    public GameObject dialogueBox;
 
-    private Conversa _conversaAtual;
-    private int _indiceFalas;
-    private Queue<string> _filaFalas;
-
-    public void IniciarDialogo(Conversa conversa)
+    private void Start()
     {
-        //Faz aparecer a caixa de diálogo
-        _caixaDeDialogo.SetActive(true);
-
-        //Inicializa a fila
-        _filaFalas = new Queue<string>();
-
-        _conversaAtual = conversa;
-        _indiceFalas = 0;
-
-        ProximaFala();
+        sentences = new Queue<string>();
     }
 
-    public void ProximaFala()
+    public void StartDialogue(Character charac)
     {
-        if (_filaFalas.Count == 0)
+        Debug.Log("Starting dialogue with " + charac.nome);
+        nameText.text = charac.nome;
+        characterImage.sprite = charac.charcterImage;
+        dialogueBox.SetActive(true);
+
+        sentences.Clear();
+
+        foreach (string sentence in charac.sentences) 
         {
-            if (_indiceFalas < _conversaAtual.Falas.Length)
-            {
-                //Coloca a imagem do personagem na caixa de diálogo e arruma o tamanho
-                _avatarPersonagem.sprite = _conversaAtual.Falas[_indiceFalas].Personagem.Expressoes[_conversaAtual.Falas[_indiceFalas].IdDaExpressao];
-                _avatarPersonagem.SetNativeSize();
-
-                //Coloca o nome do personagem na caixa de diálogo
-                _nomePersonagem.text = _conversaAtual.Falas[_indiceFalas].Personagem.Nome;
-
-                //Coloca todas as falas da expressão atual em uma fila
-                foreach (string textoFala in _conversaAtual.Falas[_indiceFalas].TextoDasFalas)
-                {
-                    _filaFalas.Enqueue(textoFala);
-                }
-
-                _indiceFalas++;
-            }
-            else
-            {
-                //Faz sumir a caixa de diálogo
-                _caixaDeDialogo.SetActive(false);
-                return;
-            }
+            sentences.Enqueue(sentence);
         }
 
-        //textoFala.text = _filaFalas.Dequeue();
+        DisplayNextSentence();
+    }
+
+    public void DisplayNextSentence()
+    {
+        if(sentences.Count == 0) 
+        {
+            EndDialogue();
+            return;
+        }
+
+        string sentence = sentences.Dequeue();
+        StopAllCoroutines();
+        StartCoroutine(TypeSentence(sentence));
+    }
+
+    IEnumerator TypeSentence (string sentence)
+    {
+        dialogueText.text = "";
+        foreach(char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return null;
+        }
+    }
+
+    void EndDialogue()
+    {
+        Debug.Log("End up Conversation");
+        dialogueBox.SetActive(false);
     }
 }
+//https://www.youtube.com/watch?v=_nRzoTzeyxU
 //https://jogoscomcafe.wordpress.com/2021/04/08/tutorial-sistema-de-dialogo-estilo-jrpg-unity/

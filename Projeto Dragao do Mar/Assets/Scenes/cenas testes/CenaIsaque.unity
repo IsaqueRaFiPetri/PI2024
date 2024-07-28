@@ -564,10 +564,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee37a457e90213439851f25e765da92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _caixaDeDialogo: {fileID: 963471486}
-  _avatarPersonagem: {fileID: 266234610}
-  _nomePersonagem: {fileID: 1169267825}
-  _textoFala: {fileID: 12167660}
+  nameText: {fileID: 0}
+  dialogueText: {fileID: 0}
+  characterImage: {fileID: 0}
+  dialogueBox: {fileID: 0}
 --- !u!1 &991915454
 GameObject:
   m_ObjectHideFlags: 0
@@ -1074,13 +1074,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 963471490}
-        m_TargetAssemblyTypeName: DialogueSystem, Assembly-CSharp
-        m_MethodName: IniciarDialogo
-        m_Mode: 2
+      - m_Target: {fileID: 1565264238}
+        m_TargetAssemblyTypeName: DialogueTrigger, Assembly-CSharp
+        m_MethodName: TriggerDialogue
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: Conversa, Assembly-CSharp
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1168,10 +1168,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ee37a457e90213439851f25e765da92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _caixaDeDialogo: {fileID: 963471486}
-  _avatarPersonagem: {fileID: 266234610}
-  _nomePersonagem: {fileID: 1169267825}
-  _textoFala: {fileID: 12167660}
+  nameText: {fileID: 1169267825}
+  dialogueText: {fileID: 12167660}
+  characterImage: {fileID: 266234610}
+  dialogueBox: {fileID: 963471486}
+--- !u!1 &1565264236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1565264237}
+  - component: {fileID: 1565264238}
+  m_Layer: 5
+  m_Name: Pessoa
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1565264237
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565264236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1790251470}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1565264238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1565264236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1062eb3a06693a049b83e016d09cf380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character:
+    nome: Kate
+    charcterImage: {fileID: 21300000, guid: 2d8e0091c2c2cdc4c95c813b328fda7a, type: 3}
+    sentences:
+    - "Ol\xE1, me chamo Kate."
+    - "E isso tudo \xE9 apenas uma simula\xE7\xE3o!"
 --- !u!1 &1683532169
 GameObject:
   m_ObjectHideFlags: 0
@@ -1256,9 +1311,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 963471490}
+      - m_Target: {fileID: 1535259331}
         m_TargetAssemblyTypeName: DialogueSystem, Assembly-CSharp
-        m_MethodName: ProximaFala
+        m_MethodName: DisplayNextSentence
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1495,6 +1550,7 @@ RectTransform:
   - {fileID: 1535259330}
   - {fileID: 963471487}
   - {fileID: 1453123247}
+  - {fileID: 1565264237}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
