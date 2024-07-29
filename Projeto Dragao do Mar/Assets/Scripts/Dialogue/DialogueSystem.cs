@@ -22,9 +22,10 @@ public class DialogueSystem : MonoBehaviour
 
     public void StartDialogue(Character charac)
     {
+        dialogueBox.SetActive(true);
         nameText.text = charac.nome;
         characterImage.sprite = charac.charcterImage;
-        dialogueBox.SetActive(true);
+
 
         sentences.Clear();
 
@@ -67,7 +68,7 @@ public class DialogueSystem : MonoBehaviour
 
     public void AnswerDialogue(int dialogueIndex)
     {
-        _ = Character.instance.sentences.GetValue(dialogueIndex);
+        Character.instance.sentences.GetValue(dialogueIndex);
     }
 }
 //https://www.youtube.com/watch?v=_nRzoTzeyxU
