@@ -64,6 +64,11 @@ public class DialogueSystem : MonoBehaviour
         dialogueBox.SetActive(false);
         PlayerStats.instance.SetWalkingMode();
     }
+
+    public void AnswerDialogue(int dialogueIndex)
+    {
+        _ = Character.instance.sentences.GetValue(dialogueIndex);
+    }
 }
 //https://www.youtube.com/watch?v=_nRzoTzeyxU
 //https://jogoscomcafe.wordpress.com/2021/04/08/tutorial-sistema-de-dialogo-estilo-jrpg-unity/
