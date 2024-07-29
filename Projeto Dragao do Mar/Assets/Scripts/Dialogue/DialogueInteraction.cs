@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UIInteraction : InteractableObject
+public class DialogueInteraction : InteractableObject
 {
-    public GameObject painel;
-
+    public Character charac1;
     protected override void Interact()
     {
-        PlayerInteraction.Instance.OnInteractionEffected.Invoke();
-        painel.SetActive(true);
+        DialogueSystem.instance.StartDialogue(charac1);
         PlayerStats.instance.SetUIingMode();
     }
 }

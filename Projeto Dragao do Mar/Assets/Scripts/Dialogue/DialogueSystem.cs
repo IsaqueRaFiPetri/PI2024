@@ -6,6 +6,7 @@ using System.Collections;
 
 public class DialogueSystem : MonoBehaviour
 {
+    public static DialogueSystem instance;
     private Queue<string> sentences;
 
     public TMP_Text nameText;
@@ -16,11 +17,11 @@ public class DialogueSystem : MonoBehaviour
     private void Start()
     {
         sentences = new Queue<string>();
+        instance = this;
     }
 
     public void StartDialogue(Character charac)
     {
-        Debug.Log("Starting dialogue with " + charac.nome);
         nameText.text = charac.nome;
         characterImage.sprite = charac.charcterImage;
         dialogueBox.SetActive(true);
@@ -54,14 +55,14 @@ public class DialogueSystem : MonoBehaviour
         foreach(char letter in sentence.ToCharArray())
         {
             dialogueText.text += letter;
-            yield return null;
+            yield return new WaitForSeconds(.1f);
         }
     }
 
     void EndDialogue()
     {
-        Debug.Log("End up Conversation");
         dialogueBox.SetActive(false);
+        PlayerStats.instance.SetWalkingMode();
     }
 }
 //https://www.youtube.com/watch?v=_nRzoTzeyxU
