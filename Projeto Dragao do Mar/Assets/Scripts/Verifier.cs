@@ -27,10 +27,12 @@ public class Verifier : MonoBehaviour
         if (currentDropdowns >= correctDropdowns)
         {
             Correct.Invoke();
+            Debug.Log("Está Correto");
         }
         else
         {
             Wrong.Invoke();
+            Debug.Log("Está Incorreto");
         }
     }
 }
