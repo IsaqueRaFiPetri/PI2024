@@ -48,17 +48,17 @@ public class PlayerStats : MonoBehaviour
 
         if (Input.GetButtonDown("Cancel"))
         {
-            if (Time.timeScale == 0)
-            {
-                Time.timeScale = 1;
-                modes = PlayerModes.Walking;
-                OnUnpause.Invoke();
-            }
-            else
+            if (Time.timeScale == 1)
             {
                 Time.timeScale = 0;
                 modes = PlayerModes.UIing;
                 OnPause.Invoke();
+            }
+            else
+            {
+                Time.timeScale = 1;
+                modes = PlayerModes.Walking;
+                OnUnpause.Invoke();
             }
         }
         
