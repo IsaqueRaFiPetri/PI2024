@@ -380,6 +380,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8925001978287634512, guid: 0d34709c843548a43bd45399d7e7d391, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8925001978287634516, guid: 0d34709c843548a43bd45399d7e7d391, type: 3}
       propertyPath: m_Pivot.x
       value: 0
